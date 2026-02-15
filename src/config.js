@@ -42,50 +42,143 @@ export const moreInfo =
   Add or remove skills in the SAME format below, choose icons here - https://icon-sets.iconify.design/
 */
 export const skillData = [
+  // tools
   {
     id: 1,
-    skill: <Icon icon="mdi:language-html5" className="display-4" />,
-    name: "HTML5",
+    skill: <Icon icon="simple-icons:playwright" className="display-4" />,
+    name: "Playwright",
   },
   {
     id: 2,
-    skill: <Icon icon="ion:logo-css3" className="display-4" />,
-    name: "CSS3",
+    skill: <Icon icon="simple-icons:cypress" className="display-4" />,
+    name: "Cypress",
   },
   {
     id: 3,
-    skill: <Icon icon="fa6-brands:js" className="display-4" />,
-    name: "JavaScript",
+    skill: <Icon icon="simple-icons:appium" className="display-4" />,
+    name: "Appium",
   },
   {
     id: 4,
-    skill: <Icon icon="ri:bootstrap-fill" className="display-4" />,
-    name: "BootStrap",
+    skill: <Icon icon="simple-icons:cucumber" className="display-4" />,
+    name: "Cucumber/Gherkin",
   },
   {
     id: 5,
-    skill: <Icon icon="mdi:react" className="display-4" />,
-    name: "React",
+    skill: <Icon icon="simple-icons:githubactions" className="display-4" />,
+    name: "GitHub Actions",
   },
   {
     id: 6,
-    skill: <Icon icon="file-icons:styledcomponents" className="display-4" />,
-    name: "Styled Components",
+    skill: <Icon icon="simple-icons:jenkins" className="display-4" />,
+    name: "Jenkins",
   },
   {
     id: 7,
-    skill: <Icon icon="akar-icons:redux-fill" className="display-4" />,
-    name: "Redux",
+    skill: <Icon icon="simple-icons:k6" className="display-4" />,
+    name: "k6",
   },
   {
     id: 8,
-    skill: <Icon icon="bi:git" className="display-4" />,
-    name: "Git",
+    skill: <Icon icon="simple-icons:apachejmeter" className="display-4" />,
+    name: "jMeter",
   },
   {
     id: 9,
-    skill: <Icon icon="fa6-brands:square-github" className="display-4" />,
-    name: "GitHub",
+    skill: <Icon icon="simple-icons:postman" className="display-4" />,
+    name: "Postman",
+  },
+  {
+    id: 10,
+    skill: <Icon icon="fa6-solid:server" className="display-4" />,
+    name: "Browserstack",
+  },
+  {
+    id: 11,
+    skill: <Icon icon="simple-icons:git" className="display-4" />,
+    name: "Git",
+  },
+  // languages
+  {
+    id: 12,
+    skill: <Icon icon="simple-icons:javascript" className="display-4" />,
+    name: "JavaScript",
+  },
+  {
+    id: 13,
+    skill: <Icon icon="simple-icons:typescript" className="display-4" />,
+    name: "TypeScript",
+  },
+  {
+    id: 14,
+    skill: <Icon icon="simple-icons:python" className="display-4" />,
+    name: "Python",
+  },
+  // remaining
+  {
+    id: 15,
+    skill: <Icon icon="simple-icons:postgresql" className="display-4" />,
+    name: "PostgreSQL",
+  },
+  {
+    id: 16,
+    skill: <Icon icon="simple-icons:mysql" className="display-4" />,
+    name: "MySQL",
+  },
+  {
+    id: 17,
+    skill: <Icon icon="simple-icons:docker" className="display-4" />,
+    name: "Docker",
+  },
+  {
+    id: 18,
+    skill: <Icon icon="simple-icons:amazonaws" className="display-4" />,
+    name: "AWS",
+  },
+  {
+    id: 19,
+    skill: <Icon icon="simple-icons:sentry" className="display-4" />,
+    name: "Sentry",
+  },
+  {
+    id: 20,
+    skill: <Icon icon="simple-icons:jira" className="display-4" />,
+    name: "Jira",
+  },
+  {
+    id: 21,
+    skill: <Icon icon="simple-icons:firebase" className="display-4" />,
+    name: "Firebase",
+  },
+  {
+    id: 22,
+    skill: <Icon icon="fa6-solid:mobile-screen-button" className="display-4" />,
+    name: "Maestro",
+  },
+  {
+    id: 23,
+    skill: <Icon icon="fa6-solid:robot" className="display-4" />,
+    name: "promptfoo",
+  },
+  {
+    id: 24,
+    skill: <Icon icon="simple-icons:testrail" className="display-4" />,
+    name: "TestRail/xRay",
+  },
+  {
+    id: 25,
+    skill: <Icon icon="fa6-solid:server" className="display-4" />,
+    name: "Rest API",
+  },
+  {
+    id: 26,
+    skill: <Icon icon="simple-icons:xcode" className="display-4" />,
+    name: "xCode",
+  },
+  {
+    id: 27,
+    skill: <Icon icon="simple-icons:android" className="display-4" />,
+    name: "Android Studio",
   },
 ];
 

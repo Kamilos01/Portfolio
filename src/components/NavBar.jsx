@@ -7,7 +7,7 @@ import PropTypes from "prop-types";
 // Router
 import { Link, useLocation } from "react-router-dom";
 // Images
-import defaultLogo from "../images/defaultNavLogo.svg";
+// no default logo required for navbar
 // Components
 import { Link as ScrollLink } from "react-scroll";
 import { Container, Nav, Navbar } from "react-bootstrap";
@@ -52,7 +52,7 @@ const propTypes = {
   closeDelay: PropTypes.number,
 };
 
-const NavBar = ({ Logo = defaultLogo, callBack, closeDelay = 125 }) => {
+const NavBar = ({ Logo = null, callBack, closeDelay = 125 }) => {
   const theme = useSelector(selectMode);
   const [isExpanded, setisExpanded] = React.useState(false);
   const { pathname } = useLocation();
@@ -70,15 +70,18 @@ const NavBar = ({ Logo = defaultLogo, callBack, closeDelay = 125 }) => {
         fixed="top"
       >
         <Container>
-          <Navbar.Brand>
-            <img
-              alt="Logo"
-              src={Logo === null ? defaultLogo : Logo}
-              width="35"
-              height="35"
-              className="rounded-circle logo-img"
-            />
-          </Navbar.Brand>
+          {/* render brand only if a logo has been passed in */}
+          {Logo && (
+            <Navbar.Brand>
+              <img
+                alt="Logo"
+                src={Logo}
+                width="35"
+                height="35"
+                className="rounded-circle logo-img"
+              />
+            </Navbar.Brand>
+          )}
           <Navbar.Toggle
             aria-controls="responsive-navbar-nav"
             onClick={() => setisExpanded(!isExpanded)}

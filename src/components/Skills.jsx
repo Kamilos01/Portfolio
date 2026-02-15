@@ -23,7 +23,7 @@ const Skills = () => {
           <Row className="mt-3 align-items-center">
             {skillData.map((skills) => {
               return (
-                <Col xs={4} key={skills.id} className="my-md-5">
+                <Col xs={3} key={skills.id} className="my-md-5">
                   <figure>
                     {skills.skill}
                     <figcaption>{skills.name}</figcaption>
