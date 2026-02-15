@@ -4,7 +4,7 @@ Welcome to the repository that powers **my personal portfolio** 👋
 
 > This repo contains the code for the site you can visit live at:
 >
-> **https://kamilos01.github.io/**
+> **https://kamilos01.github.io/Portfolio/**
 
 If you landed here before clicking the link, feel free to head over to the URL above to see:
 
