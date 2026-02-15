@@ -1,4 +1,6 @@
 import React from "react";
+// Styles
+import styled, { keyframes } from "styled-components";
 // State
 import { useSelector } from "react-redux";
 import { selectMode } from "../app/appSlice";
@@ -13,6 +15,23 @@ import { Button, Col, Container, Row } from "react-bootstrap";
 import Loading from "./Loading";
 import Title from "./Title";
 import ProjectCard from "./ProjectCard";
+
+// #region styled-components
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
+const StyledCarouselRow = styled(Row)`
+  animation: ${fadeIn} 0.5s ease-in-out;
+`;
+// #endregion
 
 // #region component
 const Projects = () => {
@@ -66,7 +85,12 @@ const Projects = () => {
 
     content = (
       <div className="d-flex flex-column align-items-center">
-        <Row xs={1} md={2} lg={3} className="g-4 justify-content-center w-100">
+        <StyledCarouselRow
+          xs={1}
+          md={2}
+          lg={3}
+          className="g-4 justify-content-center w-100"
+        >
           {visibleProjects.map((element) => (
             <Col key={element.id}>
               <ProjectCard
@@ -77,7 +101,7 @@ const Projects = () => {
               />
             </Col>
           ))}
-        </Row>
+        </StyledCarouselRow>
         <Container className="text-center mt-4">
           <Button
             variant={theme === "light" ? "outline-dark" : "outline-light"}
