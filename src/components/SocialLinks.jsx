@@ -6,7 +6,7 @@ import { useGetUsersQuery, useGetSocialsQuery } from "../app/apiSlice";
 // Icons
 import { Icon } from "@iconify/react";
 // Config
-import { Blog } from "../config";
+// blog icon/config not needed with current link setup
 
 // #region styled-components
 const StyledSocialLinks = styled.div`
@@ -39,46 +39,22 @@ const SocialLinks = () => {
         <Icon icon="icomoon-free:github" />
       </a>
       {isSuccess &&
-        socialsData.map((element, index) => {
-          let icon;
-          switch (element.provider) {
-            case "linkedin":
-              icon = <Icon icon="fa-brands:linkedin" />;
-              break;
-            case "twitter":
-              icon = <Icon icon="fa6-brands:square-x-twitter" />;
-              break;
-            case "instagram":
-              icon = <Icon icon="fa-brands:instagram-square" />;
-              break;
-            case "tiktok":
-              icon = <Icon icon="fa-brands:tiktok" />;
-              break;
-
-            default:
-              icon = <Icon icon="ph:link-bold" />;
-              break;
-          }
-          return (
-            <a
-              key={index}
-              href={element.url}
-              aria-label="External link"
-              className="link-icons"
-            >
-              {icon}
-            </a>
-          );
-        })}
-      {userData.blog && (
-        <a
-          href={userData.blog}
-          aria-label="External link"
-          className="link-icons"
-        >
-          {Blog ? Blog : <Icon icon="ph:link-bold" />}
-        </a>
-      )}
+        // only show LinkedIn from the socials data to avoid extra icons
+        socialsData
+          .filter((element) => element.provider === "linkedin")
+          .map((element, index) => {
+            return (
+              <a
+                key={index}
+                href={element.url}
+                aria-label="LinkedIn profile"
+                className="link-icons"
+              >
+                <Icon icon="fa-brands:linkedin" />
+              </a>
+            );
+          })}
+      {/* omit blog link altogether unless specifically needed */}
     </StyledSocialLinks>
   );
 };
