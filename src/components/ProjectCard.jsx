@@ -62,14 +62,13 @@ const StyledCard = styled.div`
 
 // #region component
 const propTypes = {
-  demo: PropTypes.string,
   description: PropTypes.string,
   image: PropTypes.node,
   name: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
 };
 
-const ProjectCard = ({ demo, description, image, name, url }) => {
+const ProjectCard = ({ description, image, name, url }) => {
   return (
     <StyledCard>
       <Card>
@@ -82,12 +81,6 @@ const ProjectCard = ({ demo, description, image, name, url }) => {
         <Card.Body className="overflow-auto text-center">
           <Card.Title>{name}</Card.Title>
           <Card.Text>{description}</Card.Text>
-          {demo !== (undefined && null && "") ? (
-            <Card.Link href={demo}>
-              {"Live Demo "}
-              <Icon icon="icon-park-outline:code-computer" />
-            </Card.Link>
-          ) : null}
         </Card.Body>
         <Card.Footer className="text-center">
           <Card.Link href={url}>
