@@ -144,7 +144,7 @@ const AllProjects = () => {
                   return (
                     <Col key={element.id}>
                       <ProjectCard
-                        image={element.image}
+                        imageUrl={element.imageUrl}
                         name={element.name}
                         description={element.description}
                         url={element.html_url}
@@ -156,7 +156,7 @@ const AllProjects = () => {
                   return (
                     <Col key={element.id}>
                       <ProjectCard
-                        image={element.image}
+                        imageUrl={element.imageUrl}
                         name={element.name}
                         description={element.description}
                         url={element.html_url}

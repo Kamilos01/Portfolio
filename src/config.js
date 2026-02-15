@@ -254,7 +254,8 @@ export const portfolioProjects = [
     description: "Event platform built for Halloween campaigns.",
     html_url: "https://www.softkraft.co/event-platform-for-halloween/",
     homepage: "",
-    image: null,
+    imageUrl:
+      "https://www.softkraft.co/.netlify/images?url=_astro%2F01-event-platform-for-halloween.DWB40h98.png",
   },
   {
     id: 2,
@@ -263,7 +264,8 @@ export const portfolioProjects = [
     html_url:
       "https://www.softkraft.co/saas-product-development-and-maintenance/",
     homepage: "",
-    image: null,
+    imageUrl:
+      "https://www.softkraft.co/.netlify/images?url=_astro%2F01-attendancek12.O_x2kjDK.png",
   },
   {
     id: 3,
@@ -271,7 +273,8 @@ export const portfolioProjects = [
     description: "Business reporting SaaS redesign.",
     html_url: "https://www.softkraft.co/business-reporting-saas-redesign/",
     homepage: "",
-    image: null,
+    imageUrl:
+      "https://www.softkraft.co/.netlify/images?url=_astro%2F03-business-reporting-saas-redesign.C8qh480S.png",
   },
   {
     id: 4,
@@ -279,7 +282,8 @@ export const portfolioProjects = [
     description: "Online social gaming platform.",
     html_url: "https://www.wittario.com",
     homepage: "",
-    image: null,
+    imageUrl:
+      "https://cdn.prod.website-files.com/614b2566bac09c2bfb8af47b/68397000d27dc46b1541bf76_thumbnail_6155a9209e31be7b2e75a098_opengraphimg.png",
   },
   {
     id: 5,
@@ -288,7 +292,8 @@ export const portfolioProjects = [
     html_url:
       "https://4experience.co/portfolio-item/prefabricated-building-3d-configurator/",
     homepage: "",
-    image: null,
+    imageUrl:
+      "https://i0.wp.com/4experience.co/wp-content/uploads/2023/12/prefabricated-building-3d-configurator.png?w=1316&ssl=1",
   },
   {
     id: 6,
@@ -297,16 +302,8 @@ export const portfolioProjects = [
     html_url:
       "https://4experience.co/portfolio-item/missionone-vr-soft-skills-training/",
     homepage: "",
-    image: null,
-  },
-  {
-    id: 7,
-    name: "Ar4Vision",
-    description: "AR remote support application.",
-    html_url:
-      "https://4experience.co/portfolio-item/ar-remote-support-application/",
-    homepage: "",
-    image: null,
+    imageUrl:
+      "https://i0.wp.com/4experience.co/wp-content/uploads/2022/09/Portfolio_Omaha_Navigator.jpg?w=1400&ssl=1",
   },
   {
     id: 8,
@@ -314,7 +311,8 @@ export const portfolioProjects = [
     description: "Comprehensive solution for gym operations.",
     html_url: "https://www.softkraft.co/gym-management-software/",
     homepage: "",
-    image: null,
+    imageUrl:
+      "https://www.softkraft.co/.netlify/images?url=_astro%2F01-gym-management-software.DvCK8gzQ.jpg",
   },
   {
     id: 9,
@@ -322,7 +320,8 @@ export const portfolioProjects = [
     description: "Intelligent helper for tracking work time.",
     html_url: "https://www.softkraft.co/ai-assistant-for-time-logging/",
     homepage: "",
-    image: null,
+    imageUrl:
+      "https://www.softkraft.co/.netlify/images?url=_astro%2Fai-assistant-for-time-logging.DtV6GHU0.png",
   },
   {
     id: 10,
@@ -331,7 +330,8 @@ export const portfolioProjects = [
     html_url:
       "https://www.softkraft.co/contract-lifecycle-management-solution/",
     homepage: "",
-    image: null,
+    imageUrl:
+      "https://www.softkraft.co/uploads/case-studies/contract-lifecycle-management-solution/04-contract-lifecycle-management-solution.png",
   },
 ];
 

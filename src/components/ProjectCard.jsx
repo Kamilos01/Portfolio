@@ -5,8 +5,6 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 // Icons
 import { Icon } from "@iconify/react";
-// Images
-import GH from "../images/GH.svg";
 // Components
 import { Card } from "react-bootstrap";
 
@@ -23,9 +21,23 @@ const StyledCard = styled.div`
         ? "0 3px 10px rgb(0 0 0 / 0.2)"
         : "0 3px 10px rgb(255 255 255 / 0.2)"};
 
-    .card-img-top {
+    .card-img-container {
       height: 50%;
-      object-fit: contain;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+      overflow: hidden;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.3);
+      }
     }
 
     .card-link {
@@ -63,20 +75,21 @@ const StyledCard = styled.div`
 // #region component
 const propTypes = {
   description: PropTypes.string,
-  image: PropTypes.node,
+  imageUrl: PropTypes.string,
   name: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
 };
 
-const ProjectCard = ({ description, image, name, url }) => {
+const ProjectCard = ({ description, imageUrl, name, url }) => {
   return (
     <StyledCard>
       <Card>
-        <Card.Img
-          variant="top"
-          src={image ? image : GH}
-          alt={name}
-          className="mx-auto"
+        <div
+          className="card-img-container"
+          style={{
+            backgroundImage: imageUrl ? `url("${imageUrl}")` : "none",
+            backgroundColor: "#f0f0f0",
+          }}
         />
         <Card.Body className="overflow-auto text-center">
           <Card.Title>{name}</Card.Title>
