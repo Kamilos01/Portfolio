@@ -109,6 +109,7 @@ const Hero = ({ name }) => {
             <h1 className="mb-3 display-3 title">
               {name === null ? "null" : name}
             </h1>
+            <h2 className="mb-3 h4">Quality Assurance Tech Lead</h2>
             <div className="d-flex align-items-center justify-content-center">
               <SocialLinks />
             </div>

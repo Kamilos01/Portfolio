@@ -8,8 +8,7 @@ import Skills from "../components/Skills";
 import Projects from "../components/Projects";
 import Certificates from "../components/Certificates";
 import BackToTop from "../components/BackToTop";
-// Config
-import { filteredProjects, moreInfo } from "../config";
+import { filteredProjects } from "../config";
 // Utils
 import { updateTitle } from "../utils";
 
@@ -25,11 +24,7 @@ const Home = () => {
     <>
       <Hero name={userData.name} />
       <main>
-        <AboutMe
-          avatar_url={userData.avatar_url}
-          bio={userData.bio}
-          moreInfo={moreInfo}
-        />
+        <AboutMe avatar_url={userData.avatar_url} />
         <Skills />
         <Certificates />
         <Projects filteredProjects={filteredProjects} />

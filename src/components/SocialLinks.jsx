@@ -54,6 +54,22 @@ const SocialLinks = () => {
               </a>
             );
           })}
+      {/* CV link */}
+      {(() => {
+        const base = process.env.PUBLIC_URL || "";
+        const cvUrl = `${window.location.origin}${base}/Kamil-Byrski-CV.pdf`;
+        return (
+          <a
+            href={cvUrl}
+            aria-label="Download CV"
+            className="link-icons"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Icon icon="fa6-solid:user-graduate" />
+          </a>
+        );
+      })()}
       {/* omit blog link altogether unless specifically needed */}
     </StyledSocialLinks>
   );

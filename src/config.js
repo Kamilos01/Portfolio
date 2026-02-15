@@ -34,9 +34,61 @@ export { HeroDark as Dark };
  **************************************************************
   Add a second paragraph for the about me section.
 */
-export const moreInfo =
-  "I enjoy learning about technology and helping others use it to improve their lives and be more productive. I built this site with React, React Bootstrap, Redux, and the GitHub REST API.";
+export const moreInfo = `I’m a Quality Lead & Automation Architect who believes that "it can’t be done" is just a challenge waiting for a solution. With over 6 years in the field, I’ve navigated everything from web and mobile apps to desktop software and gaming engines.
 
+What I actually do:
+
+I bridge the gap between manual and automation. One of my favorite parts of the job is mentoring manual testers, helping them level up their skills and transition into confident Automation Engineers.
+
+I scale quality. Whether it's building frameworks from scratch or stress-testing systems for 100k+ daily users, I make sure the infrastructure holds up when it matters most.
+
+I embrace the AI shift. I’m currently deep-diving into AI testing with tools like Promptfoo and LangSmith, finding ways to bake LLM evaluation and AI-driven efficiencies into the daily QA workflow.
+
+I own the whole lifecycle. From the first requirement to the final Slack notification sent by a CI/CD pipeline, I ensure the process is automated, transparent, and—most importantly—reliable.
+
+I’m not tied to a single tool or language. If a project needs a specific solution, I learn it, implement it, and move forward. Everything is possible with the right mindset and a bit of curiosity.`;
+/* About Me Sections (Accordion)
+ **************************************************************
+  Expandable sections for the about me area.
+*/
+export const aboutMeSections = [
+  {
+    id: 1,
+    title: "Bulletproof Infrastructure at Scale",
+    content:
+      "I build automation that doesn't just pass tests—it survives. From scratch-built frameworks to stress-testing apps with 100k+ daily users, I ensure the system stays up when the traffic hits hard.",
+  },
+  {
+    id: 2,
+    title: "The AI-Powered QA Workflow",
+    content:
+      "Currently deep-diving into LLM evaluation with Promptfoo and LangSmith. I don't just use AI; I bake it into the CI/CD pipeline to make testing smarter and faster.",
+  },
+  {
+    id: 3,
+    title: "Mentorship & Leveling Up Teams",
+    content:
+      "I love turning manual testers into automation powerhouses. I lead by example, showing that moving from 'clicker' to 'coder' is just a matter of the right mindset.",
+  },
+  {
+    id: 4,
+    title: "End-to-End Ownership",
+    content:
+      "From drafting requirements to automated Slack alerts on successful deployments. I own the whole pipeline, ensuring total transparency between dev and QA.",
+  },
+  {
+    id: 5,
+    title: "Language Agnostic, Solution Driven",
+    content:
+      "Need a framework in a language I haven't used yet? Give me a weekend. I care about solving the problem, not sticking to a favorite tool. Everything is possible.",
+  },
+];
+
+export const aboutMeIntro = `I’m a Quality Lead & Automation Architect who turns "impossible" into "deployed". 
+
+With over 6 years of experience, I’ve spent my career breaking and rebuilding complex ecosystems—from high-stakes gaming engines to massive web and mobile platforms. I don’t just find bugs; I architect the confidence teams need to ship faster.
+
+How I make an impact:`;
 /* Skills
  ************************************************************** 
   Add or remove skills in the SAME format below, choose icons here - https://icon-sets.iconify.design/
