@@ -69,6 +69,14 @@ a:hover {
     }
 }
 
+.certificate-card {
+  transition: var(--transition);
+}
+.certificate-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
 @media screen and (min-width: 1367px) {
   .link-icons:hover {
     color: var(--bs-primary);

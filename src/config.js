@@ -205,5 +205,40 @@ export const projectCardImages = [
   https://formspree.io/
 */
 
+// Certificates
+// list of earned qualifications with external links
+export const certificates = [
+  {
+    title: "ISTQB® Certified Tester Foundation Level (CTFL v4.0)",
+    issuer: "ISTQB.org",
+    link: "https://istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/",
+  },
+  {
+    title: "Professional Test Automation with Playwright",
+    issuer: "Jaktestowac.pl",
+    link: "https://jaktestowac.pl/playwright/",
+  },
+  {
+    title: "Postman: The Complete Guide - REST API Testing",
+    issuer: "Udemy",
+    link: "https://www.udemy.com/course/postman-the-complete-guide/",
+  },
+  {
+    title: "AI in Business Development (Umiejętności Jutra)",
+    issuer: "Google & SGH",
+    link: "https://rsvp.withgoogle.com/events/umiejetnoscijutra/",
+  },
+  {
+    title: "Performance Testing with JMeter",
+    issuer: "DlaTesterow.pl",
+    link: "https://szkolenia.dlatesterow.pl/szkolenia/kurs-testy-wydajnosciowe-z-jmeterem/",
+  },
+  {
+    title: "AI Testers vol 1.0",
+    issuer: "Jaktestowac.pl",
+    link: "#",
+  },
+];
+
 // Footer icons theme (light or dark)
 export const footerTheme = "dark";
