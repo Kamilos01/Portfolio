@@ -24,7 +24,7 @@ const SocialLinks = () => {
   React.useEffect(() => {
     if (error) {
       console.log(
-        `${error.status} - check getSocials query in src/app/apiSlice.js`
+        `${error.status} - check getSocials query in src/app/apiSlice.js`,
       );
     }
   }, [error, socialsData]);
@@ -47,9 +47,6 @@ const SocialLinks = () => {
               break;
             case "twitter":
               icon = <Icon icon="fa6-brands:square-x-twitter" />;
-              break;
-            case "facebook":
-              icon = <Icon icon="fa-brands:facebook-square" />;
               break;
             case "instagram":
               icon = <Icon icon="fa-brands:instagram-square" />;
