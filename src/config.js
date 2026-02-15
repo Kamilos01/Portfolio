@@ -241,6 +241,10 @@ export const resume = null;
  ************************************************************** 
   List the repo names (string - "your-repo-name") you want to include (they will be sorted alphabetically). If empty, only the first 3 will be included.
 */
+
+export const projectsDescription =
+  "Check out some of the projects I've had the opportunity to work on. This is just a selection – if you're interested in learning more about other implementations I've participated in, I'd be happy to discuss the scope of work and project details.";
+
 // Projects to highlight on the home page (main section)
 // if left empty, first three items from portfolioProjects will be used
 export const filteredProjects = ["Trick or Treat", "AttendanceK12", "Wink"];

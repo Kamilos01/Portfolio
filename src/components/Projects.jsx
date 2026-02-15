@@ -5,6 +5,8 @@ import styled, { keyframes } from "styled-components";
 import { useSelector } from "react-redux";
 import { selectMode } from "../app/appSlice";
 import { selectProjects } from "../app/projectsSlice";
+// Config
+import { projectsDescription } from "../config";
 // Router
 import { Link } from "react-router-dom";
 // Icons
@@ -141,6 +143,19 @@ const Projects = () => {
         <Container>
           <Container className="d-flex justify-content-center">
             <Title size={"h2"} text={"Projects"} />
+          </Container>
+          <Container className="d-flex justify-content-center mb-4">
+            <p
+              style={{
+                maxWidth: "600px",
+                textAlign: "center",
+                fontSize: "1.1rem",
+                lineHeight: "1.6",
+                opacity: 0.9,
+              }}
+            >
+              {projectsDescription}
+            </p>
           </Container>
           {content}
         </Container>
