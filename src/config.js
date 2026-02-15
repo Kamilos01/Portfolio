@@ -241,7 +241,99 @@ export const resume = null;
  ************************************************************** 
   List the repo names (string - "your-repo-name") you want to include (they will be sorted alphabetically). If empty, only the first 3 will be included.
 */
-export const filteredProjects = ["example-1", "example-2", "example-3"];
+// Projects to highlight on the home page (main section)
+// if left empty, first three items from portfolioProjects will be used
+export const filteredProjects = ["Trick or Treat", "AttendanceK12", "Wink"];
+
+// Static list of portfolio projects (replaces GitHub repo fetching)
+// include at least id, name, description, html_url, optional homepage/image
+export const portfolioProjects = [
+  {
+    id: 1,
+    name: "Trick or Treat",
+    description: "Event platform built for Halloween campaigns.",
+    html_url: "https://www.softkraft.co/event-platform-for-halloween/",
+    homepage: "",
+    image: null,
+  },
+  {
+    id: 2,
+    name: "Attendance",
+    description: "School attendance solution (SaaS product).",
+    html_url:
+      "https://www.softkraft.co/saas-product-development-and-maintenance/",
+    homepage: "",
+    image: null,
+  },
+  {
+    id: 3,
+    name: "Wink Reports",
+    description: "Business reporting SaaS redesign.",
+    html_url: "https://www.softkraft.co/business-reporting-saas-redesign/",
+    homepage: "",
+    image: null,
+  },
+  {
+    id: 4,
+    name: "Wittario",
+    description: "Online social gaming platform.",
+    html_url: "https://www.wittario.com",
+    homepage: "",
+    image: null,
+  },
+  {
+    id: 5,
+    name: "3D Configurator",
+    description: "Prefabricated building 3D configurator.",
+    html_url:
+      "https://4experience.co/portfolio-item/prefabricated-building-3d-configurator/",
+    homepage: "",
+    image: null,
+  },
+  {
+    id: 6,
+    name: "Mission one",
+    description: "VR soft skills training platform.",
+    html_url:
+      "https://4experience.co/portfolio-item/missionone-vr-soft-skills-training/",
+    homepage: "",
+    image: null,
+  },
+  {
+    id: 7,
+    name: "Ar4Vision",
+    description: "AR remote support application.",
+    html_url:
+      "https://4experience.co/portfolio-item/ar-remote-support-application/",
+    homepage: "",
+    image: null,
+  },
+  {
+    id: 8,
+    name: "Gym management software",
+    description: "Comprehensive solution for gym operations.",
+    html_url: "https://www.softkraft.co/gym-management-software/",
+    homepage: "",
+    image: null,
+  },
+  {
+    id: 9,
+    name: "AI Assistant for time logging",
+    description: "Intelligent helper for tracking work time.",
+    html_url: "https://www.softkraft.co/ai-assistant-for-time-logging/",
+    homepage: "",
+    image: null,
+  },
+  {
+    id: 10,
+    name: "Switch Board",
+    description: "Contract lifecycle management solution.",
+    html_url:
+      "https://www.softkraft.co/contract-lifecycle-management-solution/",
+    homepage: "",
+    image: null,
+  },
+];
 
 // Replace the defualt GitHub image for matching repos below (images imported above - lines 7-8)
 export const projectCardImages = [

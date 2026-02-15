@@ -4,7 +4,7 @@ import styled from "styled-components";
 // State
 import { useSelector } from "react-redux";
 import { selectProjects } from "../app/projectsSlice";
-import { useGetUsersQuery, useGetProjectsQuery } from "../app/apiSlice";
+import { useGetUsersQuery } from "../app/apiSlice";
 // Icons
 import { Icon } from "@iconify/react/dist/iconify.js";
 // Components
@@ -45,7 +45,6 @@ const AllProjects = () => {
   const [activePage, setActivePage] = React.useState(1);
   const data = useSelector(selectProjects);
   const { data: userData } = useGetUsersQuery();
-  const { isLoading, isSuccess, isError, error } = useGetProjectsQuery();
   let content;
 
   React.useEffect(() => {
@@ -70,7 +69,7 @@ const AllProjects = () => {
             onClick={() => setActivePage(number)}
           >
             {number}
-          </Pagination.Item>
+          </Pagination.Item>,
         );
         setPageItems([...tempPageItems]);
       }
@@ -78,7 +77,7 @@ const AllProjects = () => {
         setFilteredResults(filteredData.slice(0, 6));
       } else {
         setFilteredResults(
-          filteredData.slice((activePage - 1) * 6, (activePage - 1) * 6 + 6)
+          filteredData.slice((activePage - 1) * 6, (activePage - 1) * 6 + 6),
         );
       }
     } else {
@@ -91,7 +90,7 @@ const AllProjects = () => {
             onClick={() => setActivePage(number)}
           >
             {number}
-          </Pagination.Item>
+          </Pagination.Item>,
         );
         setPageItems([...tempPageItems]);
       }
@@ -99,7 +98,7 @@ const AllProjects = () => {
         setFilteredResults(data.slice(0, 6));
       } else {
         setFilteredResults(
-          data.slice((activePage - 1) * 6, (activePage - 1) * 6 + 6)
+          data.slice((activePage - 1) * 6, (activePage - 1) * 6 + 6),
         );
       }
     }
@@ -109,7 +108,8 @@ const AllProjects = () => {
     setActivePage(1);
   }, [searchInput]);
 
-  if (isLoading) {
+  if (data.length === 0) {
+    // still setting up or no projects available
     content = (
       <>
         <Container className="d-flex justify-content-center">
@@ -120,7 +120,7 @@ const AllProjects = () => {
         </Container>
       </>
     );
-  } else if (isSuccess) {
+  } else {
     content = (
       <>
         <Container className="d-flex justify-content-center">
@@ -196,12 +196,6 @@ const AllProjects = () => {
           </Container>
         </Container>
       </>
-    );
-  } else if (isError) {
-    content = (
-      <Container className="d-flex align-items-center justify-content-center">
-        <h2>{`${error.status} - check URLs in  src/app/apiSlice.js`}</h2>
-      </Container>
     );
   }
 

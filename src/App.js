@@ -9,8 +9,10 @@ import {
   setMainProjects,
   selectProjects,
 } from "./app/projectsSlice";
-import { useGetUsersQuery, useGetProjectsQuery } from "./app/apiSlice";
+import { useGetUsersQuery } from "./app/apiSlice"; // still need GitHub user for name/avatar
 import PropTypes from "prop-types";
+// Config
+import { portfolioProjects } from "./config"; // static project list
 // Router
 import { HashRouter, Routes, Route } from "react-router-dom";
 // Pages
@@ -39,7 +41,7 @@ const propTypes = {
     PropTypes.shape({
       name: PropTypes.string.isRequired,
       image: PropTypes.node.isRequired,
-    })
+    }),
   ),
 };
 
@@ -48,46 +50,17 @@ const App = ({ projectCardImages = [], filteredProjects = [] }) => {
   const projects = useSelector(selectProjects);
   const dispatch = useDispatch();
   const { isLoading, isSuccess, isError, error } = useGetUsersQuery();
-  const { data: projectsData } = useGetProjectsQuery();
+
   let content;
 
-  // Set all projects state
+  // Populate store with static portfolio projects on first render
   React.useEffect(() => {
-    const tempData = [];
-    if (projectsData !== undefined && projectsData.length !== 0) {
-      projectsData.forEach((element) => {
-        const tempObj = {
-          id: null,
-          homepage: null,
-          description: null,
-          image: null,
-          name: null,
-          html_url: null,
-        };
-        tempObj.id = element.id;
-        tempObj.homepage = element.homepage;
-        tempObj.description = element.description;
-        tempObj.name = element.name;
-        tempObj.html_url = element.html_url;
-        tempData.push(tempObj);
-      });
-      if (
-        projectCardImages !== (undefined && null) &&
-        projectCardImages.length !== 0
-      ) {
-        projectCardImages.forEach((element) => {
-          tempData.forEach((ele) => {
-            if (element.name.toLowerCase() === ele.name.toLowerCase()) {
-              ele.image = element.image;
-            }
-          });
-        });
-      }
-      dispatch(setProjects(tempData));
+    if (portfolioProjects && portfolioProjects.length) {
+      dispatch(setProjects(portfolioProjects));
     }
-  }, [projectsData, projectCardImages, dispatch]);
+  }, [dispatch]);
 
-  // Set main projects state
+  // Set main projects state (first few items or filtered by names)
   React.useEffect(() => {
     if (projects.length !== 0) {
       if (
@@ -95,7 +68,7 @@ const App = ({ projectCardImages = [], filteredProjects = [] }) => {
         filteredProjects.length !== 0
       ) {
         const tempArray = projects.filter((obj) =>
-          filteredProjects.includes(obj.name)
+          filteredProjects.includes(obj.name),
         );
         tempArray.length !== 0
           ? dispatch(setMainProjects([...tempArray]))
@@ -117,7 +90,7 @@ const App = ({ projectCardImages = [], filteredProjects = [] }) => {
         setTheme(getPreferredTheme());
       }
     },
-    [dispatch]
+    [dispatch],
   );
 
   React.useEffect(() => {
@@ -169,7 +142,9 @@ const App = ({ projectCardImages = [], filteredProjects = [] }) => {
     <ErrorBoundary FallbackComponent={AppFallback}>
       {/* https://reactrouter.com/6.28.0/upgrading/future#v7_starttransition */}
       {/* https://reactrouter.com/6.28.0/upgrading/future#v7_relativesplatpath */}
-      <HashRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true, }}>
+      <HashRouter
+        future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+      >
         <ThemeProvider theme={{ name: theme }}>
           <ScrollToTop />
           <GlobalStyles />
