@@ -29,7 +29,7 @@ const CertCard = ({ cert }) => {
             bg="secondary"
             className="certificate-badge certificate-badge--muted opacity-50"
           >
-            Not yet verified
+            In Progress
           </Badge>
         </div>
       )}
