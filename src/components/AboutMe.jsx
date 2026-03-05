@@ -53,6 +53,8 @@ const StyledAboutMe = styled.section`
   }
   .accordion-content.open {
     max-height: 500px;
+  }
+  .accordion-content-inner {
     padding: 1rem;
   }
 `;
@@ -64,7 +66,10 @@ const propTypes = {
 };
 
 const AboutMe = ({ avatar_url }) => {
-  const [expanded, setExpanded] = React.useState({});
+  // Open the first panel by default to hint that the accordion is interactive
+  const [expanded, setExpanded] = React.useState(
+    aboutMeSections.length > 0 ? { [aboutMeSections[0].id]: true } : {},
+  );
 
   const toggleSection = (id) => {
     setExpanded((prev) => ({
@@ -97,7 +102,9 @@ const AboutMe = ({ avatar_url }) => {
                         expanded[section.id] ? "open" : ""
                       }`}
                     >
-                      <p style={{ marginBottom: 0 }}>{section.content}</p>
+                      <div className="accordion-content-inner">
+                        <p style={{ marginBottom: 0 }}>{section.content}</p>
+                      </div>
                     </div>
                   </div>
                 ))}
