@@ -1,6 +1,6 @@
 import React from "react";
 // Styles
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes, useTheme } from "styled-components";
 // State
 import PropTypes from "prop-types";
 // Icons
@@ -100,6 +100,9 @@ const propTypes = {
 
 const Hero = ({ name }) => {
   const { showBoundary } = useErrorBoundary();
+  const theme = useTheme();
+  const base = process.env.PUBLIC_URL || "";
+  const cvUrl = `${window.location.origin}${base}/Kamil-Byrski-CV.pdf`;
 
   return (
     <StyledHero>
@@ -112,6 +115,20 @@ const Hero = ({ name }) => {
             <h2 className="mb-3 h4">Quality Assurance Tech Lead</h2>
             <div className="d-flex align-items-center justify-content-center">
               <SocialLinks />
+            </div>
+            <div className="mt-4">
+              <Button
+                as="a"
+                href={cvUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                variant={
+                  theme.name === "light" ? "outline-dark" : "outline-light"
+                }
+                size="lg"
+              >
+                Download CV
+              </Button>
             </div>
           </Col>
           <Col className="d-none d-md-block">
