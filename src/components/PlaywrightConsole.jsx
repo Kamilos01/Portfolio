@@ -224,6 +224,22 @@ const Dots = styled.div`
   margin: 4px 0;
   animation: ${fadeIn} 0.4s ease forwards;
 `;
+
+const CounterBadge = styled.span`
+  margin-left: auto;
+  color: #4ade80;
+  font-size: 0.68rem;
+`;
+
+const FailMark = styled.span`
+  color: #f87171;
+  margin-right: 4px;
+`;
+
+const RetryMark = styled.span`
+  color: #fbbf24;
+  margin-right: 4px;
+`;
 // #endregion
 
 // #region helpers
@@ -287,9 +303,11 @@ const AnimatedConsole = () => {
   const [showStartup, setShowStartup] = useState(false);
   const [showSummary, setShowSummary] = useState(false);
   const [fading, setFading] = useState(false);
+  const [count, setCount] = useState(0);
 
   const lineCountRef = useRef(0); // total lines added so far
   const phaseRef = useRef(0);
+  const retryTimersRef = useRef([]);
 
   // helper: advance phase and update ref
   const goToPhase = (p) => {
@@ -313,7 +331,10 @@ const AnimatedConsole = () => {
       setShowStartup(false);
       setShowSummary(false);
       setFading(false);
+      setCount(0);
       lineCountRef.current = 0;
+      retryTimersRef.current.forEach(clearTimeout);
+      retryTimersRef.current = [];
       goToPhase(1);
 
       // Phase 1 — typewriter (0→700ms)
@@ -360,7 +381,7 @@ const AnimatedConsole = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Phase 3 interval: add test lines
+  // Phase 3 interval: add test lines (including fail → retry → pass scenario)
   useEffect(() => {
     if (phase !== 3) return;
 
@@ -370,14 +391,41 @@ const AnimatedConsole = () => {
         return;
       }
       const idx = lineCountRef.current % TEST_LINES.length;
+      const isFail = idx === 6; // 7th entry in each cycle triggers fail-retry
       lineCountRef.current += 1;
-      const newLine = { ...TEST_LINES[idx], key: lineCountRef.current };
+      const key = lineCountRef.current;
+      const newLine = {
+        ...TEST_LINES[idx],
+        key,
+        status: isFail ? "fail" : "pass",
+      };
       setVisibleLines((prev) => {
         const next = [...prev, newLine];
         return next.length > MAX_VISIBLE
           ? next.slice(next.length - MAX_VISIBLE)
           : next;
       });
+
+      if (isFail) {
+        // fail → retry after 500ms
+        const t1 = setTimeout(() => {
+          if (phaseRef.current !== 3) return;
+          setVisibleLines((prev) =>
+            prev.map((l) => (l.key === key ? { ...l, status: "retry" } : l)),
+          );
+        }, 500);
+        // retry → pass after 1300ms, then increment counter
+        const t2 = setTimeout(() => {
+          if (phaseRef.current !== 3) return;
+          setVisibleLines((prev) =>
+            prev.map((l) => (l.key === key ? { ...l, status: "pass" } : l)),
+          );
+          setCount((c) => Math.min(c + 1, 100));
+        }, 1300);
+        retryTimersRef.current.push(t1, t2);
+      } else {
+        setCount((c) => Math.min(c + 1, 100));
+      }
     }, LINE_INTERVAL);
 
     return () => clearInterval(id);
@@ -399,6 +447,9 @@ const AnimatedConsole = () => {
           <TrafficLight $color="#ffbd2e" />
           <TrafficLight $color="#28c840" />
           <TitleText>playwright test</TitleText>
+          {phase >= 3 && (
+            <CounterBadge>[{phase >= 4 ? 100 : count}/100]</CounterBadge>
+          )}
         </TitleBar>
         <Body>
           <Prompt>
@@ -411,18 +462,44 @@ const AnimatedConsole = () => {
           )}
 
           <LinesWindow>
-            {visibleLines.map((t) => (
-              <TestLine key={t.key}>
-                <Check>✓</Check>
-                <BrowserTag>[{t.browser}]</BrowserTag>{" "}
-                <FilePath>
-                  › {t.file}:{t.line}
-                </FilePath>
-                <TestTitle>
-                  {t.title} ({t.ms})
-                </TestTitle>
-              </TestLine>
-            ))}
+            {visibleLines.map((t) => {
+              if (t.status === "fail") {
+                return (
+                  <TestLine key={t.key}>
+                    <FailMark>✗</FailMark>
+                    <BrowserTag>[{t.browser}]</BrowserTag>{" "}
+                    <FilePath>
+                      › {t.file}:{t.line}
+                    </FilePath>
+                    <TestTitle>{t.title}</TestTitle>
+                  </TestLine>
+                );
+              }
+              if (t.status === "retry") {
+                return (
+                  <TestLine key={t.key}>
+                    <RetryMark>↻</RetryMark>
+                    <BrowserTag>[{t.browser}]</BrowserTag>{" "}
+                    <FilePath>
+                      › {t.file}:{t.line}
+                    </FilePath>
+                    <TestTitle>retrying… ({t.ms})</TestTitle>
+                  </TestLine>
+                );
+              }
+              return (
+                <TestLine key={t.key}>
+                  <Check>✓</Check>
+                  <BrowserTag>[{t.browser}]</BrowserTag>{" "}
+                  <FilePath>
+                    › {t.file}:{t.line}
+                  </FilePath>
+                  <TestTitle>
+                    {t.title} ({t.ms})
+                  </TestTitle>
+                </TestLine>
+              );
+            })}
           </LinesWindow>
 
           {showDots && <Dots>· · ·</Dots>}
