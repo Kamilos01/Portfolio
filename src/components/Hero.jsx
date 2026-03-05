@@ -1,13 +1,14 @@
 import React from "react";
 // Styles
-import styled, { keyframes, useTheme } from "styled-components";
+import styled, { useTheme } from "styled-components";
 // State
 import PropTypes from "prop-types";
 // Icons
 import { Icon } from "@iconify/react";
 // Images
-import Logo from "../images/logo.svg";
 import { Light, Dark, jobTitle } from "../config";
+// Components (local)
+import PlaywrightConsole from "./PlaywrightConsole";
 // Components
 import { useErrorBoundary } from "react-error-boundary";
 import { Link } from "react-scroll";
@@ -15,15 +16,6 @@ import { Button, Col, Container, Row } from "react-bootstrap";
 import SocialLinks from "./SocialLinks";
 
 // #region styled-components
-const float = keyframes`
-  from {
-    transform: translateY(0px);
-  }
-  to {
-    transform: translateY(-12px);
-  }
-`;
-
 const StyledHero = styled.header`
   position: relative;
   display: grid;
@@ -63,12 +55,6 @@ const StyledHero = styled.header`
 
   .down-container {
     height: 10rem;
-  }
-
-  @media (prefers-reduced-motion: no-preference) {
-    .hero-img {
-      animation: ${float} 4s ease-in-out infinite alternate;
-    }
   }
 
   @media screen and (min-width: 1180px) {
@@ -132,11 +118,7 @@ const Hero = ({ name }) => {
             </div>
           </Col>
           <Col className="d-none d-md-block">
-            <img
-              src={Logo}
-              alt="React Logo"
-              className="w-75 mx-auto hero-img"
-            />
+            <PlaywrightConsole />
           </Col>
         </Row>
         <Row className="align-items-end down-container">
