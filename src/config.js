@@ -17,6 +17,9 @@ import Logo from "./images/logo.svg";
 */
 export const githubUsername = "Kamilos01";
 
+// Job title — single source of truth used in Hero and meta tags
+export const jobTitle = "Quality Lead & Automation Architect";
+
 // Navbar Logo image
 export const navLogo = null;
 
