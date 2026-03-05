@@ -77,7 +77,11 @@ a:hover {
 .certificate-card {
   transition: var(--transition);
 }
-.certificate-card:hover {
+.certificate-card--linked {
+  cursor: pointer;
+}
+a:hover .certificate-card--linked,
+a:focus .certificate-card--linked {
   transform: translateY(-5px);
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
