@@ -299,7 +299,6 @@ export const portfolioProjects = [
     homepage: "",
     imageUrl:
       "https://www.softkraft.co/.netlify/images?url=_astro%2F01-event-platform-for-halloween.DWB40h98.png",
-    tags: ["TypeScript", "Playwright", "REST API", "CI/CD"],
   },
   {
     id: 2,
@@ -310,7 +309,6 @@ export const portfolioProjects = [
     homepage: "",
     imageUrl:
       "https://www.softkraft.co/.netlify/images?url=_astro%2F01-attendancek12.O_x2kjDK.png",
-    tags: ["TypeScript", "Cypress", "Appium", "REST API"],
   },
   {
     id: 3,
@@ -320,7 +318,6 @@ export const portfolioProjects = [
     homepage: "",
     imageUrl:
       "https://www.softkraft.co/.netlify/images?url=_astro%2F03-business-reporting-saas-redesign.C8qh480S.png",
-    tags: ["JavaScript", "Playwright", "Postman", "GitHub Actions"],
   },
   {
     id: 4,
@@ -330,7 +327,6 @@ export const portfolioProjects = [
     homepage: "",
     imageUrl:
       "https://cdn.prod.website-files.com/614b2566bac09c2bfb8af47b/68397000d27dc46b1541bf76_thumbnail_6155a9209e31be7b2e75a098_opengraphimg.png",
-    tags: ["TypeScript", "Playwright", "WebSocket", "REST API"],
   },
   {
     id: 5,
@@ -341,7 +337,6 @@ export const portfolioProjects = [
     homepage: "",
     imageUrl:
       "https://i0.wp.com/4experience.co/wp-content/uploads/2023/12/prefabricated-building-3d-configurator.png?w=1316&ssl=1",
-    tags: ["JavaScript", "Selenium", "Manual Testing", "WebGL"],
   },
   {
     id: 6,
@@ -352,7 +347,6 @@ export const portfolioProjects = [
     homepage: "",
     imageUrl:
       "https://i0.wp.com/4experience.co/wp-content/uploads/2022/09/Portfolio_Omaha_Navigator.jpg?w=1400&ssl=1",
-    tags: ["C#", "Unity", "VR", "Manual Testing"],
   },
   {
     id: 8,
@@ -362,7 +356,6 @@ export const portfolioProjects = [
     homepage: "",
     imageUrl:
       "https://www.softkraft.co/.netlify/images?url=_astro%2F01-gym-management-software.DvCK8gzQ.jpg",
-    tags: ["TypeScript", "Playwright", "REST API", "PostgreSQL"],
   },
   {
     id: 9,
@@ -372,7 +365,6 @@ export const portfolioProjects = [
     homepage: "",
     imageUrl:
       "https://www.softkraft.co/.netlify/images?url=_astro%2Fai-assistant-for-time-logging.DtV6GHU0.png",
-    tags: ["Python", "Promptfoo", "LangSmith", "AI/LLM"],
   },
   {
     id: 10,
@@ -383,7 +375,6 @@ export const portfolioProjects = [
     homepage: "",
     imageUrl:
       "https://www.softkraft.co/uploads/case-studies/contract-lifecycle-management-solution/04-contract-lifecycle-management-solution.png",
-    tags: ["TypeScript", "Playwright", "AWS", "CI/CD"],
   },
 ];
 
@@ -433,6 +424,49 @@ export const certificates = [
     title: "AI Testers vol 1.0",
     issuer: "Jaktestowac.pl",
     // url omitted — certificate not yet publicly verifiable
+  },
+];
+
+// Work Experience
+// reverse-chronological order
+export const workExperience = [
+  {
+    id: 1,
+    company: "Softkraft",
+    role: "QA Tech Lead",
+    period: "2023 – Present",
+    url: "https://www.softkraft.co",
+    achievements: [
+      "Architected Playwright-based E2E suites across 6 SaaS products (TypeScript + GitHub Actions CI/CD), cutting regression cycle time by 80%.",
+      "Introduced an AI-evaluation pipeline using Promptfoo & LangSmith for automated LLM feature testing and prompt regression.",
+      "Mentored 4 junior QA engineers from manual testing into automation proficiency.",
+      "Performed load testing with k6, identifying bottlenecks and ensuring stability for 100k+ daily users across key applications.",
+    ],
+  },
+  {
+    id: 2,
+    company: "ProfitCard",
+    role: "QA Engineer",
+    period: "2025 – 2025",
+    achievements: [
+      "Built and scaled the QA department from the ground up — conducted recruitment, defined processes.",
+      "Developed Cypress + Cucumber (BDD) E2E regression suites for web applications.",
+      "Owned backend quality through extensive API testing using Postman, covering REST endpoints and integration scenarios.",
+      "Authored Python scripts for automated MySQL database management and test data provisioning.",
+    ],
+  },
+  {
+    id: 3,
+    company: "4Experience",
+    role: "QA Lead Engineer",
+    period: "2019 – 2023",
+    url: "https://4experience.co",
+    achievements: [
+      "Led manual and automated QA for VR/AR/MR applications built in Unity (C#) and Unreal Engine (C++), covering Oculus and HTC Vive platforms.",
+      "Developed Cypress/Appium-based regression suites for web and mobile applications.",
+      "Created test documentation standards (test plans, cases, exploratory charters) adopted across the QA team.",
+      "Google Play and App Store releases: managed the entire QA process for mobile app launches, ensuring compliance with platform guidelines and smooth user experience.",
+    ],
   },
 ];
 
