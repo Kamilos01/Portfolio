@@ -3,8 +3,7 @@ import React from "react";
 import styled, { keyframes } from "styled-components";
 // Components
 import { Container } from "react-bootstrap";
-// Images
-import Logo from "../images/logo.svg";
+import { Icon } from "@iconify/react";
 // Utils
 import { updateTitle } from "../utils";
 
@@ -34,11 +33,13 @@ const StyledNotFound = styled.main`
   }
 
   .logo-img {
-    width: 10rem;
+    font-size: 7rem;
+    display: flex;
+    align-items: center;
   }
 
   @media (prefers-reduced-motion: no-preference) {
-    img {
+    .logo-img {
       animation: ${Spin} infinite 20s linear;
     }
   }
@@ -54,9 +55,9 @@ const NotFound = () => {
   return (
     <>
       <StyledNotFound>
-        <Container className="d-flex justify-content-center">
+        <Container className="d-flex justify-content-center align-items-center">
           <span>4</span>
-          <img src={Logo} alt="React Logo" className="logo-img" />
+          <Icon icon="fa6-solid:bug" className="logo-img" />
           <span>4</span>
         </Container>
         <p className="text-center">Sorry, page not found...</p>
