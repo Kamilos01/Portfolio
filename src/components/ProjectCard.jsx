@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 // Icons
 import { Icon } from "@iconify/react";
 // Components
-import { Card } from "react-bootstrap";
+import { Badge, Card } from "react-bootstrap";
 
 // #region styled-components
 const StyledCard = styled.div`
@@ -65,6 +65,21 @@ const StyledCard = styled.div`
       }
     }
 
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      justify-content: center;
+      padding: 0 0.25rem 0.5rem;
+
+      .badge {
+        font-size: 0.72rem;
+        font-weight: 500;
+        letter-spacing: 0.02em;
+        opacity: 0.85;
+      }
+    }
+
     &:hover {
       transform: scale(1.03);
     }
@@ -77,10 +92,11 @@ const propTypes = {
   description: PropTypes.string,
   imageUrl: PropTypes.string,
   name: PropTypes.string.isRequired,
+  tags: PropTypes.arrayOf(PropTypes.string),
   url: PropTypes.string.isRequired,
 };
 
-const ProjectCard = ({ description, imageUrl, name, url }) => {
+const ProjectCard = ({ description, imageUrl, name, tags, url }) => {
   return (
     <StyledCard>
       <Card>
@@ -94,6 +110,15 @@ const ProjectCard = ({ description, imageUrl, name, url }) => {
         <Card.Body className="overflow-auto text-center">
           <Card.Title>{name}</Card.Title>
           <Card.Text>{description}</Card.Text>
+          {tags && tags.length > 0 && (
+            <div className="card-tags">
+              {tags.map((tag) => (
+                <Badge key={tag} bg="secondary">
+                  {tag}
+                </Badge>
+              ))}
+            </div>
+          )}
         </Card.Body>
         <Card.Footer className="text-center">
           <Card.Link href={url}>

@@ -97,143 +97,179 @@ How I make an impact:`;
   Add or remove skills in the SAME format below, choose icons here - https://icon-sets.iconify.design/
 */
 export const skillData = [
-  // tools
+  // Testing Frameworks
   {
     id: 1,
     skill: <Icon icon="simple-icons:playwright" className="display-4" />,
     name: "Playwright",
+    category: "Testing Frameworks",
   },
   {
     id: 2,
     skill: <Icon icon="simple-icons:cypress" className="display-4" />,
     name: "Cypress",
+    category: "Testing Frameworks",
   },
   {
     id: 3,
     skill: <Icon icon="simple-icons:appium" className="display-4" />,
     name: "Appium",
+    category: "Testing Frameworks",
   },
   {
     id: 4,
     skill: <Icon icon="simple-icons:cucumber" className="display-4" />,
     name: "Cucumber/Gherkin",
-  },
-  {
-    id: 5,
-    skill: <Icon icon="simple-icons:githubactions" className="display-4" />,
-    name: "GitHub Actions",
-  },
-  {
-    id: 6,
-    skill: <Icon icon="simple-icons:jenkins" className="display-4" />,
-    name: "Jenkins",
+    category: "Testing Frameworks",
   },
   {
     id: 7,
     skill: <Icon icon="simple-icons:k6" className="display-4" />,
     name: "k6",
+    category: "Testing Frameworks",
   },
   {
     id: 8,
     skill: <Icon icon="simple-icons:apachejmeter" className="display-4" />,
     name: "jMeter",
-  },
-  {
-    id: 9,
-    skill: <Icon icon="simple-icons:postman" className="display-4" />,
-    name: "Postman",
+    category: "Testing Frameworks",
   },
   {
     id: 10,
     skill: <Icon icon="fa6-solid:server" className="display-4" />,
     name: "Browserstack",
+    category: "Testing Frameworks",
   },
-  {
-    id: 11,
-    skill: <Icon icon="simple-icons:git" className="display-4" />,
-    name: "Git",
-  },
-  // languages
+  // Languages
   {
     id: 12,
     skill: <Icon icon="simple-icons:javascript" className="display-4" />,
     name: "JavaScript",
+    category: "Languages",
   },
   {
     id: 13,
     skill: <Icon icon="simple-icons:typescript" className="display-4" />,
     name: "TypeScript",
+    category: "Languages",
   },
   {
     id: 14,
     skill: <Icon icon="simple-icons:python" className="display-4" />,
     name: "Python",
+    category: "Languages",
   },
-  // remaining
+  // CI/CD & DevOps
   {
-    id: 15,
-    skill: <Icon icon="simple-icons:postgresql" className="display-4" />,
-    name: "PostgreSQL",
+    id: 5,
+    skill: <Icon icon="simple-icons:githubactions" className="display-4" />,
+    name: "GitHub Actions",
+    category: "CI/CD & DevOps",
   },
   {
-    id: 16,
-    skill: <Icon icon="simple-icons:mysql" className="display-4" />,
-    name: "MySQL",
+    id: 6,
+    skill: <Icon icon="simple-icons:jenkins" className="display-4" />,
+    name: "Jenkins",
+    category: "CI/CD & DevOps",
+  },
+  {
+    id: 11,
+    skill: <Icon icon="simple-icons:git" className="display-4" />,
+    name: "Git",
+    category: "CI/CD & DevOps",
   },
   {
     id: 17,
     skill: <Icon icon="simple-icons:docker" className="display-4" />,
     name: "Docker",
+    category: "CI/CD & DevOps",
   },
   {
     id: 18,
     skill: <Icon icon="simple-icons:amazonaws" className="display-4" />,
     name: "AWS",
+    category: "CI/CD & DevOps",
+  },
+  // Databases & APIs
+  {
+    id: 9,
+    skill: <Icon icon="simple-icons:postman" className="display-4" />,
+    name: "Postman",
+    category: "Databases & APIs",
   },
   {
-    id: 19,
-    skill: <Icon icon="simple-icons:sentry" className="display-4" />,
-    name: "Sentry",
+    id: 15,
+    skill: <Icon icon="simple-icons:postgresql" className="display-4" />,
+    name: "PostgreSQL",
+    category: "Databases & APIs",
   },
   {
-    id: 20,
-    skill: <Icon icon="simple-icons:jira" className="display-4" />,
-    name: "Jira",
+    id: 16,
+    skill: <Icon icon="simple-icons:mysql" className="display-4" />,
+    name: "MySQL",
+    category: "Databases & APIs",
   },
   {
     id: 21,
     skill: <Icon icon="simple-icons:firebase" className="display-4" />,
     name: "Firebase",
+    category: "Databases & APIs",
+  },
+  {
+    id: 25,
+    skill: <Icon icon="fa6-solid:network-wired" className="display-4" />,
+    name: "Rest API",
+    category: "Databases & APIs",
+  },
+  // Mobile & Other
+  {
+    id: 20,
+    skill: <Icon icon="simple-icons:jira" className="display-4" />,
+    name: "Jira",
+    category: "Mobile & Other",
   },
   {
     id: 22,
     skill: <Icon icon="fa6-solid:mobile-screen-button" className="display-4" />,
     name: "Maestro",
-  },
-  {
-    id: 23,
-    skill: <Icon icon="fa6-solid:robot" className="display-4" />,
-    name: "promptfoo",
+    category: "Mobile & Other",
   },
   {
     id: 24,
     skill: <Icon icon="simple-icons:testrail" className="display-4" />,
     name: "TestRail/xRay",
-  },
-  {
-    id: 25,
-    skill: <Icon icon="fa6-solid:server" className="display-4" />,
-    name: "Rest API",
+    category: "Mobile & Other",
   },
   {
     id: 26,
     skill: <Icon icon="simple-icons:xcode" className="display-4" />,
     name: "xCode",
+    category: "Mobile & Other",
   },
   {
     id: 27,
     skill: <Icon icon="simple-icons:android" className="display-4" />,
     name: "Android Studio",
+    category: "Mobile & Other",
+  },
+  // AI & Monitoring
+  {
+    id: 19,
+    skill: <Icon icon="simple-icons:sentry" className="display-4" />,
+    name: "Sentry",
+    category: "AI & Monitoring",
+  },
+  {
+    id: 23,
+    skill: <Icon icon="fa6-solid:robot" className="display-4" />,
+    name: "promptfoo",
+    category: "AI & Monitoring",
+  },
+  {
+    id: 28,
+    skill: <Icon icon="fa6-solid:brain" className="display-4" />,
+    name: "LangSmith",
+    category: "AI & Monitoring",
   },
 ];
 
@@ -263,6 +299,7 @@ export const portfolioProjects = [
     homepage: "",
     imageUrl:
       "https://www.softkraft.co/.netlify/images?url=_astro%2F01-event-platform-for-halloween.DWB40h98.png",
+    tags: ["TypeScript", "Playwright", "REST API", "CI/CD"],
   },
   {
     id: 2,
@@ -273,6 +310,7 @@ export const portfolioProjects = [
     homepage: "",
     imageUrl:
       "https://www.softkraft.co/.netlify/images?url=_astro%2F01-attendancek12.O_x2kjDK.png",
+    tags: ["TypeScript", "Cypress", "Appium", "REST API"],
   },
   {
     id: 3,
@@ -282,6 +320,7 @@ export const portfolioProjects = [
     homepage: "",
     imageUrl:
       "https://www.softkraft.co/.netlify/images?url=_astro%2F03-business-reporting-saas-redesign.C8qh480S.png",
+    tags: ["JavaScript", "Playwright", "Postman", "GitHub Actions"],
   },
   {
     id: 4,
@@ -291,6 +330,7 @@ export const portfolioProjects = [
     homepage: "",
     imageUrl:
       "https://cdn.prod.website-files.com/614b2566bac09c2bfb8af47b/68397000d27dc46b1541bf76_thumbnail_6155a9209e31be7b2e75a098_opengraphimg.png",
+    tags: ["TypeScript", "Playwright", "WebSocket", "REST API"],
   },
   {
     id: 5,
@@ -301,6 +341,7 @@ export const portfolioProjects = [
     homepage: "",
     imageUrl:
       "https://i0.wp.com/4experience.co/wp-content/uploads/2023/12/prefabricated-building-3d-configurator.png?w=1316&ssl=1",
+    tags: ["JavaScript", "Selenium", "Manual Testing", "WebGL"],
   },
   {
     id: 6,
@@ -311,6 +352,7 @@ export const portfolioProjects = [
     homepage: "",
     imageUrl:
       "https://i0.wp.com/4experience.co/wp-content/uploads/2022/09/Portfolio_Omaha_Navigator.jpg?w=1400&ssl=1",
+    tags: ["C#", "Unity", "VR", "Manual Testing"],
   },
   {
     id: 8,
@@ -320,6 +362,7 @@ export const portfolioProjects = [
     homepage: "",
     imageUrl:
       "https://www.softkraft.co/.netlify/images?url=_astro%2F01-gym-management-software.DvCK8gzQ.jpg",
+    tags: ["TypeScript", "Playwright", "REST API", "PostgreSQL"],
   },
   {
     id: 9,
@@ -329,6 +372,7 @@ export const portfolioProjects = [
     homepage: "",
     imageUrl:
       "https://www.softkraft.co/.netlify/images?url=_astro%2Fai-assistant-for-time-logging.DtV6GHU0.png",
+    tags: ["Python", "Promptfoo", "LangSmith", "AI/LLM"],
   },
   {
     id: 10,
@@ -339,6 +383,7 @@ export const portfolioProjects = [
     homepage: "",
     imageUrl:
       "https://www.softkraft.co/uploads/case-studies/contract-lifecycle-management-solution/04-contract-lifecycle-management-solution.png",
+    tags: ["TypeScript", "Playwright", "AWS", "CI/CD"],
   },
 ];
 
