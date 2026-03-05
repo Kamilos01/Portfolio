@@ -69,6 +69,11 @@ a:hover {
     }
 }
 
+.section--compact {
+  min-height: unset;
+  padding: calc(var(--nav-height) + 1rem) 0 3rem;
+}
+
 .certificate-card {
   transition: var(--transition);
 }

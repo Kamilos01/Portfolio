@@ -9,7 +9,7 @@ import { certificates } from "../config";
 const Certificates = () => {
   return (
     <Element name="Certificates" id="certificates">
-      <section className="section">
+      <section className="section section--compact">
         <Container className="text-center">
           <Container className="d-flex justify-content-center">
             <Title size="h2" text="Certificates" />
