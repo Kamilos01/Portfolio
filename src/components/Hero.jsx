@@ -15,12 +15,12 @@ import { Button, Col, Container, Row } from "react-bootstrap";
 import SocialLinks from "./SocialLinks";
 
 // #region styled-components
-const spin = keyframes`
+const float = keyframes`
   from {
-    transform: rotate(0deg);
+    transform: translateY(0px);
   }
   to {
-    transform: rotate(360deg);
+    transform: translateY(-12px);
   }
 `;
 
@@ -67,7 +67,7 @@ const StyledHero = styled.header`
 
   @media (prefers-reduced-motion: no-preference) {
     .hero-img {
-      animation: ${spin} infinite 20s linear;
+      animation: ${float} 4s ease-in-out infinite alternate;
     }
   }
 
