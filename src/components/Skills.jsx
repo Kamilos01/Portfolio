@@ -4,7 +4,16 @@ import { useSelector } from "react-redux";
 import { selectMode } from "../app/appSlice";
 // Components
 import { Element } from "react-scroll";
-import { Button, Col, Container, Nav, Row, Tab } from "react-bootstrap";
+import {
+  Button,
+  Col,
+  Container,
+  Nav,
+  OverlayTrigger,
+  Row,
+  Tab,
+  Tooltip,
+} from "react-bootstrap";
 import Title from "./Title";
 // Config
 import { skillData, resume } from "../config";
@@ -82,10 +91,19 @@ const Skills = () => {
                         key={skills.id}
                         className="my-3"
                       >
-                        <figure>
-                          {skills.skill}
-                          <figcaption>{skills.name}</figcaption>
-                        </figure>
+                        <OverlayTrigger
+                          placement="top"
+                          overlay={
+                            <Tooltip id={`tooltip-skill-${skills.id}`}>
+                              {skills.name}
+                            </Tooltip>
+                          }
+                        >
+                          <figure style={{ cursor: "default" }}>
+                            {skills.skill}
+                            <figcaption>{skills.name}</figcaption>
+                          </figure>
+                        </OverlayTrigger>
                       </Col>
                     ))}
                   </Row>
